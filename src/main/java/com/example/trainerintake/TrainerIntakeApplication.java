@@ -1,0 +1,11 @@
+package com.example.trainerintake;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class TrainerIntakeApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(TrainerIntakeApplication.class, args);
+    }
+}
