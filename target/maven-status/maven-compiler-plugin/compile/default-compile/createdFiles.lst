@@ -1,5 +1,8 @@
+com\example\trainerintake\controller\PlanController.class
+com\example\trainerintake\controller\RootController.class
 com\example\trainerintake\controller\SurveyController.class
 com\example\trainerintake\service\SurveyService.class
 com\example\trainerintake\repository\AnswerRepository.class
 com\example\trainerintake\TrainerIntakeApplication.class
+com\example\trainerintake\service\PlanService.class
 com\example\trainerintake\model\Answer.class

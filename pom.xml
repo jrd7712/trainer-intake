@@ -47,6 +47,8 @@
             <artifactId>jakarta.persistence-api</artifactId>
         </dependency>
 
+        
+
         <!-- Optional: Lombok for boilerplate getters/setters -->
         <dependency>
             <groupId>org.projectlombok</groupId>
