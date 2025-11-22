@@ -1,19 +1,14 @@
-# trainer-intake
+# Trainer Intake API
 
-Spark (Scala) starter generated from **spark-scala-archetype_2.12**.
+A Spring Boot application that manages survey answers and prepares data for AI-generated workout plans.
 
-- **Scala**: 2.12.18  
-- **Spark**: 3.5.6  
-- **Tests**: ScalaTest
+## 🚀 Getting Started
 
-> Requires **Java 17+**. Ensure `JAVA_HOME` points to a JDK 17.
+### Prerequisites
+- Java 17+
+- Maven 3.9+
+- SQL Server running locally
 
-
+### Run the app
 ```bash
-mvn -q clean test
-```
-
-
-```bash
-mvn clean package
-```
+mvn spring-boot:run
