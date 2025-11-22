@@ -1,9 +1,10 @@
 package com.example.trainerintake.controller;
 
 import com.example.trainerintake.service.PlanService;
+import com.example.trainerintake.dto.WorkoutPlanResponse;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Map;
+
 
 @RestController
 @RequestMapping("/generate-plan")
@@ -16,7 +17,8 @@ public class PlanController {
     }
 
     @GetMapping("/{id}")
-    public Map<String, Object> generatePlan(@PathVariable Integer id) {
+    public WorkoutPlanResponse generatePlan(@PathVariable Integer id) {
         return planService.buildPlanFromSurvey(id);
     }
 }
+
