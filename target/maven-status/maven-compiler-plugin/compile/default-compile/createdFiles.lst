@@ -14,8 +14,10 @@ com\example\trainerintake\dto\LoginResponse.class
 com\example\trainerintake\security\JwtFilter.class
 com\example\trainerintake\config\WebConfig$1.class
 com\example\trainerintake\controller\SurveyController.class
+com\example\trainerintake\controller\UserController.class
 com\example\trainerintake\model\WorkoutPlan.class
 com\example\trainerintake\controller\AuthController.class
+com\example\trainerintake\service\UserService.class
 com\example\trainerintake\config\WebConfig.class
 com\example\trainerintake\model\Question.class
 com\example\trainerintake\config\SecurityConfig.class

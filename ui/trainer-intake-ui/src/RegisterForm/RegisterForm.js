@@ -11,8 +11,14 @@ function RegisterForm() {
       const response = await fetch("http://localhost:8080/auth/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, password }),
-      });
+        body: JSON.stringify({
+        firstName: name,   // maps to User.firstName
+        lastName: "",      // or collect from form
+        email: email,
+        phone: "",         // optional if your entity allows null
+        password: password
+      }),
+    });
 
       if (response.ok) {
         alert("Registration successful!");

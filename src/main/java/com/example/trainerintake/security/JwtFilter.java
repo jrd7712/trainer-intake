@@ -27,6 +27,14 @@ public class JwtFilter extends OncePerRequestFilter {
                                     HttpServletResponse response,
                                     FilterChain filterChain) throws ServletException, IOException {
 
+        String path = request.getServletPath();
+
+        // ✅ Skip JWT validation for auth endpoints and client registration
+        if (path.startsWith("/auth") || path.equals("/api/clients/register")) {
+            filterChain.doFilter(request, response);
+            return;
+        }
+
         String authHeader = request.getHeader("Authorization");
         String token = null;
         String email = null;
@@ -36,7 +44,9 @@ public class JwtFilter extends OncePerRequestFilter {
             try {
                 email = jwtService.validateToken(token);
             } catch (Exception e) {
-                // invalid token
+                // invalid token → reject
+                response.setStatus(HttpServletResponse.SC_FORBIDDEN);
+                return;
             }
         }
 
