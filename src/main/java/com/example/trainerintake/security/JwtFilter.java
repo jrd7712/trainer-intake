@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
+import java.util.Collections;
 
 @Component
 public class JwtFilter extends OncePerRequestFilter {
@@ -31,6 +32,7 @@ public class JwtFilter extends OncePerRequestFilter {
 
         // ✅ Skip JWT validation for auth endpoints and client registration
         if (path.startsWith("/auth") || path.equals("/api/clients/register")) {
+            System.out.println("JwtFilter path: " + path);
             filterChain.doFilter(request, response);
             return;
         }
@@ -42,9 +44,8 @@ public class JwtFilter extends OncePerRequestFilter {
         if (authHeader != null && authHeader.startsWith("Bearer ")) {
             token = authHeader.substring(7);
             try {
-                email = jwtService.validateToken(token);
+                email = jwtService.extractUsername(token); // use your JwtService method
             } catch (Exception e) {
-                // invalid token → reject
                 response.setStatus(HttpServletResponse.SC_FORBIDDEN);
                 return;
             }
@@ -52,7 +53,7 @@ public class JwtFilter extends OncePerRequestFilter {
 
         if (email != null && SecurityContextHolder.getContext().getAuthentication() == null) {
             UsernamePasswordAuthenticationToken authToken =
-                    new UsernamePasswordAuthenticationToken(email, null, null);
+                    new UsernamePasswordAuthenticationToken(email, null, Collections.emptyList());
             authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
             SecurityContextHolder.getContext().setAuthentication(authToken);
         }

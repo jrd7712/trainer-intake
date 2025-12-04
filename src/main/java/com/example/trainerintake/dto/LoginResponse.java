@@ -2,7 +2,8 @@ package com.example.trainerintake.dto;
 
 public class LoginResponse {
     private String token;
-    private String message;
+    public LoginResponse(String token) { this.token = token; }
+
 
     // Getter and Setter for token
     public String getToken() {
@@ -14,9 +15,9 @@ public class LoginResponse {
 
     // Getter and Setter for message
     public String getMessage() {
-        return message;
+        return token;
     }
     public void setMessage(String message) {
-        this.message = message;
+        this.token = message;
     }
 }
