@@ -7,9 +7,11 @@ C:\Users\deysh\Desktop\trainer-intake\src\main\java\com\example\trainerintake\co
 C:\Users\deysh\Desktop\trainer-intake\src\main\java\com\example\trainerintake\model\Question.java
 C:\Users\deysh\Desktop\trainer-intake\src\main\java\com\example\trainerintake\service\PlanService.java
 C:\Users\deysh\Desktop\trainer-intake\src\main\java\com\example\trainerintake\config\WebConfig.java
+C:\Users\deysh\Desktop\trainer-intake\src\main\java\com\example\trainerintake\repository\SurveyRepository.java
 C:\Users\deysh\Desktop\trainer-intake\src\main\java\com\example\trainerintake\repository\WorkoutPlanRepository.java
 C:\Users\deysh\Desktop\trainer-intake\src\main\java\com\example\trainerintake\dto\RegisterResponse.java
 C:\Users\deysh\Desktop\trainer-intake\src\main\java\com\example\trainerintake\controller\AuthController.java
+C:\Users\deysh\Desktop\trainer-intake\src\main\java\com\example\trainerintake\dto\AnswerRequest.java
 C:\Users\deysh\Desktop\trainer-intake\src\main\java\com\example\trainerintake\service\SurveyService.java
 C:\Users\deysh\Desktop\trainer-intake\src\main\java\com\example\trainerintake\dto\LoginRequest.java
 C:\Users\deysh\Desktop\trainer-intake\src\main\java\com\example\trainerintake\repository\QuestionRepository.java
@@ -22,5 +24,6 @@ C:\Users\deysh\Desktop\trainer-intake\src\main\java\com\example\trainerintake\re
 C:\Users\deysh\Desktop\trainer-intake\src\main\java\com\example\trainerintake\security\JwtFilter.java
 C:\Users\deysh\Desktop\trainer-intake\src\main\java\com\example\trainerintake\service\JwtService.java
 C:\Users\deysh\Desktop\trainer-intake\src\main\java\com\example\trainerintake\model\Answer.java
+C:\Users\deysh\Desktop\trainer-intake\src\main\java\com\example\trainerintake\model\Survey.java
 C:\Users\deysh\Desktop\trainer-intake\src\main\java\com\example\trainerintake\dto\LoginResponse.java
 C:\Users\deysh\Desktop\trainer-intake\src\main\java\com\example\trainerintake\config\SecurityConfig.java

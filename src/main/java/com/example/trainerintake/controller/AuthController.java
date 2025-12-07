@@ -1,10 +1,15 @@
 package com.example.trainerintake.controller;
 
+import java.util.Optional;
+
 import com.example.trainerintake.dto.LoginRequest;
 import com.example.trainerintake.dto.LoginResponse;
+import com.example.trainerintake.dto.RegisterRequest;
+import com.example.trainerintake.dto.RegisterResponse;
 import com.example.trainerintake.model.User;
 import com.example.trainerintake.service.UserService;
 import com.example.trainerintake.service.JwtService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,27 +29,38 @@ public class AuthController {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    // Registration endpoint
     @PostMapping("/register")
-    public ResponseEntity<User> register(@RequestBody User user) {
-        // Hash the raw password before saving
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
-        User saved = userService.saveUser(user);
-        return ResponseEntity.ok(saved);
-    }
+        public ResponseEntity<RegisterResponse> register(@RequestBody RegisterRequest request) {
+            User user = new User();
+            user.setUsername(request.getUsername());
+            user.setFirstName(request.getFirstName());
+            user.setLastName(request.getLastName());
+            user.setEmail(request.getEmail());
+            user.setPassword(passwordEncoder.encode(request.getPassword()));
+
+            User saved = userService.saveUser(user);
+
+            RegisterResponse response = new RegisterResponse(
+               "Registration successful",
+             true,
+                saved.getId(),
+                saved.getUsername()
+            );
+
+    return ResponseEntity.ok(response);
+}
 
     // Login endpoint
     @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody LoginRequest loginRequest) {
-        User user = userService.findByEmail(loginRequest.getEmail());
+        public ResponseEntity<?> login(@RequestBody LoginRequest loginRequest) {
+            User user = userService.findByUsername(loginRequest.getUsername())
+                                   .orElseThrow(() -> new RuntimeException("User not found"));
 
-        if (user != null && passwordEncoder.matches(loginRequest.getPassword(), user.getPassword())) {
-            // Generate JWT token
-            String token = jwtService.generateToken(user.getEmail());
-            return ResponseEntity.ok(new LoginResponse(token));
-        } else {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
+            if (passwordEncoder.matches(loginRequest.getPassword(), user.getPassword())) {
+                String token = jwtService.generateToken(user.getUsername());
+                return ResponseEntity.ok(new LoginResponse(token, "Login successful"));
+            } else {
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
+            }
         }
-    }
-
 }

@@ -1,7 +1,9 @@
 import { useState } from "react";
 
 function RegisterForm() {
-  const [name, setName] = useState("");
+  const [username, setUsername] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -12,17 +14,17 @@ function RegisterForm() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-        firstName: name,   // maps to User.firstName
-        lastName: "",      // or collect from form
-        email: email,
-        phone: "",         // optional if your entity allows null
-        password: password
-      }),
-    });
+          username: username,
+          firstName: firstName,
+          lastName: lastName,
+          email: email,
+          password: password
+        }),
+      });
 
       if (response.ok) {
         alert("Registration successful!");
-        window.location.href = "/login"; // redirect to login
+        window.location.href = "/login";
       } else {
         alert("Registration failed");
       }
@@ -37,9 +39,23 @@ function RegisterForm() {
       <h2>Register</h2>
       <input
         type="text"
-        placeholder="Name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
+        placeholder="Username"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+        required
+      />
+      <input
+        type="text"
+        placeholder="First Name"
+        value={firstName}
+        onChange={(e) => setFirstName(e.target.value)}
+        required
+      />
+      <input
+        type="text"
+        placeholder="Last Name"
+        value={lastName}
+        onChange={(e) => setLastName(e.target.value)}
         required
       />
       <input

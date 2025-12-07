@@ -3,26 +3,39 @@ package com.example.trainerintake.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "Answers")
+@Table(name = "answers")
 public class Answer {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer answerId;
 
-    private Integer surveyId;
-    private Integer questionId;
-    private String answerText;
+    @Column(name = "answer_text", columnDefinition = "TEXT")
+    private String response;
+
+    // ✅ Link to Survey
+    @ManyToOne
+    @JoinColumn(name = "survey_id", nullable = false)
+    private Survey survey;
+
+    // ✅ Link to Question
+    @ManyToOne
+    @JoinColumn(name = "question_id", nullable = false)
+    private Question question;
+
 
     // Getters and setters
     public Integer getAnswerId() { return answerId; }
     public void setAnswerId(Integer answerId) { this.answerId = answerId; }
 
-    public Integer getSurveyId() { return surveyId; }
-    public void setSurveyId(Integer surveyId) { this.surveyId = surveyId; }
+    public String getResponse() { return response; }
+    public void setResponse(String response) { this.response = response; }
 
-    public Integer getQuestionId() { return questionId; }
-    public void setQuestionId(Integer questionId) { this.questionId = questionId; }
+    public Survey getSurvey() { return survey; }
+    public void setSurvey(Survey survey) { this.survey = survey; }  // ✅ setter you need
 
-    public String getAnswerText() { return answerText; }
-    public void setAnswerText(String answerText) { this.answerText = answerText; }
+    public Question getQuestion() { return question; }
+    public void setQuestion(Question question) { this.question = question; }
+
+    
 }

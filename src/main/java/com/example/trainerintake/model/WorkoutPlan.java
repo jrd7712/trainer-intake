@@ -6,27 +6,38 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "workout_plans")
 public class WorkoutPlan {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id; // ✅ use Long for consistency
 
-    private Integer surveyId;
-
-    @Column(columnDefinition = "TEXT")
+    @Column(name = "plan_text", columnDefinition = "TEXT")
     private String planText;
 
+    @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 
-    // Getters and setters
-    public Integer getId() { return id; }
-    public void setId(Integer id) { this.id = id; }
+    // ✅ Proper one-to-one relationship back to Survey
+    @OneToOne
+    @JoinColumn(name = "survey_id", nullable = false, unique = true)
+    private Survey survey;
 
-    public Integer getSurveyId() { return surveyId; }
-    public void setSurveyId(Integer surveyId) { this.surveyId = surveyId; }
+    // Lifecycle hook to set createdAt automatically
+    @PrePersist
+    protected void onCreate() {
+        this.createdAt = LocalDateTime.now();
+    }
+
+    // Getters and setters
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
 
     public String getPlanText() { return planText; }
     public void setPlanText(String planText) { this.planText = planText; }
 
     public LocalDateTime getCreatedAt() { return createdAt; }
     public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
+
+    public Survey getSurvey() { return survey; }
+    public void setSurvey(Survey survey) { this.survey = survey; }
 }

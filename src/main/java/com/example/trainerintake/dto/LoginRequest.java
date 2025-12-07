@@ -1,15 +1,15 @@
 package com.example.trainerintake.dto;
 
 public class LoginRequest {
-    private String email;
+    private String username;   // ✅ use username for authentication
     private String password;
 
-    // Getter and Setter for email
-    public String getEmail() {
-        return email;
+    // Getter and Setter for username
+    public String getUsername() {
+        return username;
     }
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     // Getter and Setter for password

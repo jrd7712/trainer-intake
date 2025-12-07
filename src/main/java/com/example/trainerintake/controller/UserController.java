@@ -3,40 +3,53 @@ package com.example.trainerintake.controller;
 import com.example.trainerintake.model.User;
 import com.example.trainerintake.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/clients")
 public class UserController {
 
-    @Autowired
-    private UserService userService;
+    private final UserService userService;
 
+    @Autowired
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
+
+    // 1. Register a new client
     @PostMapping("/register")
     public User registerClient(@RequestBody User user) {
         return userService.saveUser(user);
     }
 
+    // 2. Get client by ID
     @GetMapping("/{id}")
-    public Optional<User> getClient(@PathVariable Long id) {
-        return userService.getClientById(id);
+    public ResponseEntity<User> getClient(@PathVariable Integer id) {
+        return userService.getClientById(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
     }
 
+    // 3. Get all clients
     @GetMapping
     public List<User> getAllClients() {
         return userService.getAllClients();
     }
 
+    // 4. Delete client by ID
     @DeleteMapping("/{id}")
-    public void deleteClient(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteClient(@PathVariable Integer id) {
         userService.deleteClient(id);
+        return ResponseEntity.noContent().build();
     }
 
+    // 5. Get client by email
     @GetMapping("/email/{email}")
-    public User getClientByEmail(@PathVariable String email) {
-        return userService.findByEmail(email);
+    public ResponseEntity<User> getClientByEmail(@PathVariable String email) {
+        User user = userService.findByEmail(email);
+        return (user != null) ? ResponseEntity.ok(user) : ResponseEntity.notFound().build();
     }
 }

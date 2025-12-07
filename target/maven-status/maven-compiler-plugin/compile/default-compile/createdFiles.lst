@@ -6,6 +6,7 @@ com\example\trainerintake\dto\RegisterResponse.class
 com\example\trainerintake\repository\QuestionRepository.class
 com\example\trainerintake\repository\WorkoutPlanRepository.class
 com\example\trainerintake\service\SurveyService.class
+com\example\trainerintake\dto\AnswerRequest.class
 com\example\trainerintake\model\User.class
 com\example\trainerintake\dto\LoginRequest.class
 com\example\trainerintake\repository\UserRepository.class
@@ -14,10 +15,12 @@ com\example\trainerintake\dto\LoginResponse.class
 com\example\trainerintake\security\JwtFilter.class
 com\example\trainerintake\config\WebConfig$1.class
 com\example\trainerintake\controller\SurveyController.class
+com\example\trainerintake\repository\SurveyRepository.class
 com\example\trainerintake\controller\UserController.class
 com\example\trainerintake\model\WorkoutPlan.class
 com\example\trainerintake\controller\AuthController.class
 com\example\trainerintake\service\UserService.class
+com\example\trainerintake\model\Survey.class
 com\example\trainerintake\config\WebConfig.class
 com\example\trainerintake\model\Question.class
 com\example\trainerintake\config\SecurityConfig.class

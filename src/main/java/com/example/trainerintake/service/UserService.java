@@ -18,7 +18,7 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    public Optional<User> getClientById(Long id) {
+    public Optional<User> getClientById(Integer id) {
         return userRepository.findById(id);
     }
 
@@ -26,11 +26,17 @@ public class UserService {
         return userRepository.findAll();
     }
 
-    public void deleteClient(Long id) {
+    public void deleteClient(Integer id) {
         userRepository.deleteById(id);
     }
 
     public User findByEmail(String email) {
         return userRepository.findByEmail(email);
     }
+
+    public Optional<User> findByUsername(String username) {
+        return userRepository.findByUsername(username);
+    }
+
+
 }
