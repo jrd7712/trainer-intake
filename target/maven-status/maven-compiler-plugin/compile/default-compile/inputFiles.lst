@@ -1,7 +1,9 @@
+C:\Users\deysh\Desktop\trainer-intake\src\main\java\com\example\trainerintake\controller\ProgramController.java
 C:\Users\deysh\Desktop\trainer-intake\src\main\java\com\example\trainerintake\repository\UserRepository.java
 C:\Users\deysh\Desktop\trainer-intake\src\main\java\com\example\trainerintake\controller\RootController.java
 C:\Users\deysh\Desktop\trainer-intake\src\main\java\com\example\trainerintake\model\User.java
 C:\Users\deysh\Desktop\trainer-intake\src\main\java\com\example\trainerintake\dto\RegisterRequest.java
+C:\Users\deysh\Desktop\trainer-intake\src\main\java\com\example\trainerintake\service\CustomUserDetailsService.java
 C:\Users\deysh\Desktop\trainer-intake\src\main\java\com\example\trainerintake\controller\UserController.java
 C:\Users\deysh\Desktop\trainer-intake\src\main\java\com\example\trainerintake\controller\SurveyController.java
 C:\Users\deysh\Desktop\trainer-intake\src\main\java\com\example\trainerintake\model\Question.java

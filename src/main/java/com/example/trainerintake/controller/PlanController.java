@@ -2,15 +2,21 @@ package com.example.trainerintake.controller;
 
 import com.example.trainerintake.service.PlanService;
 import com.example.trainerintake.dto.WorkoutPlanResponse;
+
+
+
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
+
+
 
 @RestController
 @RequestMapping("/generate-plan")
 public class PlanController {
 
     private final PlanService planService;
+    
 
     public PlanController(PlanService planService) {
         this.planService = planService;

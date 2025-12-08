@@ -57,7 +57,7 @@ public class AuthController {
                                    .orElseThrow(() -> new RuntimeException("User not found"));
 
             if (passwordEncoder.matches(loginRequest.getPassword(), user.getPassword())) {
-                String token = jwtService.generateToken(user.getUsername());
+                String token = jwtService.generateToken(user);
                 return ResponseEntity.ok(new LoginResponse(token, "Login successful"));
             } else {
                 return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");

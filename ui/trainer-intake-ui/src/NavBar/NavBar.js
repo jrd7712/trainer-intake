@@ -8,6 +8,7 @@ function NavBar() {
       <Link to="/register" style={{ marginRight: "10px" }}>Register</Link>
       <Link to="/dashboard"style={{ marginRight: "10px" }}>Dashboard</Link>
       <Link to="/CreateWorkout" style={{ marginRight: "10px" }}>Create Workout</Link>
+      <Link to="/MyPrograms" style={{ marginRight: "10px" }}>MyPrograms</Link>
     </nav>
   );
 }

@@ -61,6 +61,7 @@ public class SecurityConfig {
             .csrf(csrf -> csrf.disable())
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/auth/**").permitAll() // allow register/login
+                .requestMatchers("/programs/**").hasRole("USER")
                 .requestMatchers("/survey/**").authenticated()
                 .anyRequest().authenticated()            // everything else requires JWT
             )

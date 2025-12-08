@@ -1,5 +1,6 @@
 com\example\trainerintake\controller\PlanController.class
 com\example\trainerintake\controller\RootController.class
+com\example\trainerintake\controller\ProgramController.class
 com\example\trainerintake\service\PlanService.class
 com\example\trainerintake\dto\WorkoutPlanResponse.class
 com\example\trainerintake\dto\RegisterResponse.class
@@ -12,6 +13,7 @@ com\example\trainerintake\dto\LoginRequest.class
 com\example\trainerintake\repository\UserRepository.class
 com\example\trainerintake\service\JwtService.class
 com\example\trainerintake\dto\LoginResponse.class
+com\example\trainerintake\service\CustomUserDetailsService.class
 com\example\trainerintake\security\JwtFilter.class
 com\example\trainerintake\config\WebConfig$1.class
 com\example\trainerintake\controller\SurveyController.class

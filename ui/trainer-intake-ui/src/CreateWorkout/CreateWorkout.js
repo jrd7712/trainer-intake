@@ -6,6 +6,7 @@ function CreateWorkout() {
   const [answers, setAnswers] = useState({});
   const [workoutPlan, setWorkoutPlan] = useState(null);
   const [surveyId, setSurveyId] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(0); // ✅ track which question is shown
 
   // Load survey questions
   useEffect(() => {
@@ -46,10 +47,23 @@ function CreateWorkout() {
 
       if (response.surveyId) {
         setSurveyId(response.surveyId);
-        setWorkoutPlan(response.workoutPlan); // ✅ just capture the plan text
+        setWorkoutPlan(response.workoutPlan); // ✅ capture the plan text
       }
     } catch (err) {
       console.error("Error submitting survey:", err);
+    }
+  };
+
+  // Navigation
+  const goNext = () => {
+    if (currentIndex < questions.length - 1) {
+      setCurrentIndex(currentIndex + 1);
+    }
+  };
+
+  const goPrev = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
     }
   };
 
@@ -59,19 +73,38 @@ function CreateWorkout() {
 
       {questions.length > 0 ? (
         <form>
-          {questions.map((q) => (
-            <div key={q.questionId} style={{ marginBottom: "15px" }}>
-              <label>{q.questionText}</label>
-              <input
-                type="text"
-                value={answers[q.questionId] || ""}
-                onChange={e => handleChange(q.questionId, e.target.value)}
-              />
-            </div>
-          ))}
-          <button type="button" onClick={handleSubmit}>
-            Submit Survey
-          </button>
+          {/* ✅ Show only the current question */}
+          <div style={{ marginBottom: "15px" }}>
+            <h3 style={{ color: "#555" }}>
+              {questions[currentIndex].section}
+            </h3>
+            <label>{questions[currentIndex].questionText}</label>
+            <input
+              type="text"
+              value={answers[questions[currentIndex].questionId] || ""}
+              onChange={e => handleChange(questions[currentIndex].questionId, e.target.value)}
+            />
+          </div>
+
+          {/* ✅ Navigation arrows */}
+          <div style={{ marginTop: "10px" }}>
+            <button type="button" onClick={goPrev} disabled={currentIndex === 0}>
+              ← Previous
+            </button>
+            {currentIndex < questions.length - 1 ? (
+              <button type="button" onClick={goNext}>
+                Next →
+              </button>
+            ) : (
+              <button type="button" onClick={handleSubmit}>
+                Submit Survey
+              </button>
+            )}
+          </div>
+
+          <p>
+            Question {currentIndex + 1} of {questions.length}
+          </p>
         </form>
       ) : (
         <p>Loading survey...</p>
@@ -81,8 +114,7 @@ function CreateWorkout() {
         <div style={{ marginTop: "20px" }}>
           <h3>Your AI‑Generated Workout Plan</h3>
           <p><strong>Survey ID:</strong> {surveyId}</p>
-          <pre style={{ whiteSpace: "pre-wrap" }}>{workoutPlan}</pre> 
-          {/* ✅ display the plan text nicely */}
+          <pre style={{ whiteSpace: "pre-wrap" }}>{workoutPlan}</pre>
         </div>
       )}
     </div>
