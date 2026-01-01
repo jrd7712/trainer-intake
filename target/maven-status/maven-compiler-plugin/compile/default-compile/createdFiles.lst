@@ -9,6 +9,7 @@ com\example\trainerintake\repository\WorkoutPlanRepository.class
 com\example\trainerintake\service\SurveyService.class
 com\example\trainerintake\dto\AnswerRequest.class
 com\example\trainerintake\model\User.class
+com\example\trainerintake\dto\MyPrograms.class
 com\example\trainerintake\dto\LoginRequest.class
 com\example\trainerintake\repository\UserRepository.class
 com\example\trainerintake\service\JwtService.class

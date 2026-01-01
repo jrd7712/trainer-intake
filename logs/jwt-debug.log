@@ -1,0 +1,184 @@
+2026-01-01 17:45:11 DEBUG c.e.trainerintake.security.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-01 17:45:18 INFO  c.e.trainerintake.security.JwtFilter - ?? Incoming request path: /auth/login
+2026-01-01 17:45:18 DEBUG c.e.trainerintake.security.JwtFilter - ?? Skipping JWT filter for path: /auth/login
+2026-01-01 17:45:28 INFO  c.e.trainerintake.security.JwtFilter - ?? Incoming request path: /programs/me
+2026-01-01 17:45:28 DEBUG c.e.trainerintake.security.JwtFilter - ? Found Authorization header, token extracted
+2026-01-01 17:45:28 INFO  c.e.trainerintake.security.JwtFilter - ? Username extracted from JWT: test@gmail.com
+2026-01-01 17:45:28 DEBUG c.e.trainerintake.security.JwtFilter - ? Loading UserDetails for: test@gmail.com
+2026-01-01 17:45:28 INFO  c.e.trainerintake.security.JwtFilter - ? Loaded UserDetails: test@gmail.com | Authorities: [USER]
+2026-01-01 17:45:28 INFO  c.e.trainerintake.security.JwtFilter - ? Token validation result for test@gmail.com: true
+2026-01-01 17:45:28 INFO  c.e.trainerintake.security.JwtFilter - ? Authentication set in SecurityContext for user: test@gmail.com
+2026-01-01 17:45:29 INFO  c.e.trainerintake.security.JwtFilter - ?? Incoming request path: /programs/me
+2026-01-01 17:45:29 DEBUG c.e.trainerintake.security.JwtFilter - ? Found Authorization header, token extracted
+2026-01-01 17:45:29 INFO  c.e.trainerintake.security.JwtFilter - ? Username extracted from JWT: test@gmail.com
+2026-01-01 17:45:29 DEBUG c.e.trainerintake.security.JwtFilter - ? Loading UserDetails for: test@gmail.com
+2026-01-01 17:45:29 INFO  c.e.trainerintake.security.JwtFilter - ? Loaded UserDetails: test@gmail.com | Authorities: [USER]
+2026-01-01 17:45:29 INFO  c.e.trainerintake.security.JwtFilter - ? Token validation result for test@gmail.com: true
+2026-01-01 17:45:29 INFO  c.e.trainerintake.security.JwtFilter - ? Authentication set in SecurityContext for user: test@gmail.com
+2026-01-01 17:49:25 DEBUG c.e.trainerintake.security.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-01 17:49:28 INFO  c.e.trainerintake.security.JwtFilter - ?? Incoming request path: /auth/login
+2026-01-01 17:49:28 DEBUG c.e.trainerintake.security.JwtFilter - ?? Skipping JWT filter for path: /auth/login
+2026-01-01 17:49:35 INFO  c.e.trainerintake.security.JwtFilter - ?? Incoming request path: /programs/me
+2026-01-01 17:49:35 DEBUG c.e.trainerintake.security.JwtFilter - ? Found Authorization header, token extracted
+2026-01-01 17:49:35 INFO  c.e.trainerintake.security.JwtFilter - ? Username extracted from JWT: test@gmail.com
+2026-01-01 17:49:35 DEBUG c.e.trainerintake.security.JwtFilter - ? Loading UserDetails for: test@gmail.com
+2026-01-01 17:49:35 INFO  c.e.trainerintake.security.JwtFilter - ? Loaded UserDetails: test@gmail.com | Authorities: [USER]
+2026-01-01 17:49:35 INFO  c.e.trainerintake.security.JwtFilter - ? Token validation result for test@gmail.com: true
+2026-01-01 17:49:35 INFO  c.e.trainerintake.security.JwtFilter - ? Authentication set in SecurityContext for user: test@gmail.com
+2026-01-01 17:49:35 INFO  c.e.trainerintake.security.JwtFilter - ?? Incoming request path: /programs/me
+2026-01-01 17:49:35 DEBUG c.e.trainerintake.security.JwtFilter - ? Found Authorization header, token extracted
+2026-01-01 17:49:35 INFO  c.e.trainerintake.security.JwtFilter - ? Username extracted from JWT: test@gmail.com
+2026-01-01 17:49:35 DEBUG c.e.trainerintake.security.JwtFilter - ? Loading UserDetails for: test@gmail.com
+2026-01-01 17:49:35 INFO  c.e.trainerintake.security.JwtFilter - ? Loaded UserDetails: test@gmail.com | Authorities: [USER]
+2026-01-01 17:49:35 INFO  c.e.trainerintake.security.JwtFilter - ? Token validation result for test@gmail.com: true
+2026-01-01 17:49:35 INFO  c.e.trainerintake.security.JwtFilter - ? Authentication set in SecurityContext for user: test@gmail.com
+2026-01-01 17:52:42 DEBUG c.e.trainerintake.security.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-01 17:53:11 INFO  c.e.trainerintake.security.JwtFilter - ?? Incoming request path: /survey/questions
+2026-01-01 17:53:11 DEBUG c.e.trainerintake.security.JwtFilter - ? Found Authorization header, token extracted
+2026-01-01 17:53:11 INFO  c.e.trainerintake.security.JwtFilter - ? Username extracted from JWT: test@gmail.com
+2026-01-01 17:53:11 DEBUG c.e.trainerintake.security.JwtFilter - ? Loading UserDetails for: test@gmail.com
+2026-01-01 17:53:12 INFO  c.e.trainerintake.security.JwtFilter - ? Loaded UserDetails: test@gmail.com | Authorities: [USER]
+2026-01-01 17:53:12 INFO  c.e.trainerintake.security.JwtFilter - ? Token validation result for test@gmail.com: true
+2026-01-01 17:53:12 INFO  c.e.trainerintake.security.JwtFilter - ? Authentication set in SecurityContext for user: test@gmail.com
+2026-01-01 17:53:12 INFO  c.e.trainerintake.security.JwtFilter - ?? Incoming request path: /survey/questions
+2026-01-01 17:53:12 DEBUG c.e.trainerintake.security.JwtFilter - ? Found Authorization header, token extracted
+2026-01-01 17:53:12 INFO  c.e.trainerintake.security.JwtFilter - ? Username extracted from JWT: test@gmail.com
+2026-01-01 17:53:12 DEBUG c.e.trainerintake.security.JwtFilter - ? Loading UserDetails for: test@gmail.com
+2026-01-01 17:53:12 INFO  c.e.trainerintake.security.JwtFilter - ? Loaded UserDetails: test@gmail.com | Authorities: [USER]
+2026-01-01 17:53:12 INFO  c.e.trainerintake.security.JwtFilter - ? Token validation result for test@gmail.com: true
+2026-01-01 17:53:12 INFO  c.e.trainerintake.security.JwtFilter - ? Authentication set in SecurityContext for user: test@gmail.com
+2026-01-01 17:53:13 INFO  c.e.trainerintake.security.JwtFilter - ?? Incoming request path: /programs/me
+2026-01-01 17:53:13 DEBUG c.e.trainerintake.security.JwtFilter - ? Found Authorization header, token extracted
+2026-01-01 17:53:13 INFO  c.e.trainerintake.security.JwtFilter - ? Username extracted from JWT: test@gmail.com
+2026-01-01 17:53:13 DEBUG c.e.trainerintake.security.JwtFilter - ? Loading UserDetails for: test@gmail.com
+2026-01-01 17:53:14 INFO  c.e.trainerintake.security.JwtFilter - ? Loaded UserDetails: test@gmail.com | Authorities: [USER]
+2026-01-01 17:53:14 INFO  c.e.trainerintake.security.JwtFilter - ? Token validation result for test@gmail.com: true
+2026-01-01 17:53:14 INFO  c.e.trainerintake.security.JwtFilter - ? Authentication set in SecurityContext for user: test@gmail.com
+2026-01-01 17:53:14 INFO  c.e.trainerintake.security.JwtFilter - ?? Incoming request path: /programs/me
+2026-01-01 17:53:14 DEBUG c.e.trainerintake.security.JwtFilter - ? Found Authorization header, token extracted
+2026-01-01 17:53:14 INFO  c.e.trainerintake.security.JwtFilter - ? Username extracted from JWT: test@gmail.com
+2026-01-01 17:53:14 DEBUG c.e.trainerintake.security.JwtFilter - ? Loading UserDetails for: test@gmail.com
+2026-01-01 17:53:14 INFO  c.e.trainerintake.security.JwtFilter - ? Loaded UserDetails: test@gmail.com | Authorities: [USER]
+2026-01-01 17:53:14 INFO  c.e.trainerintake.security.JwtFilter - ? Token validation result for test@gmail.com: true
+2026-01-01 17:53:14 INFO  c.e.trainerintake.security.JwtFilter - ? Authentication set in SecurityContext for user: test@gmail.com
+2026-01-01 18:01:56 DEBUG c.e.trainerintake.security.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-01 18:02:12 INFO  c.e.trainerintake.security.JwtFilter - ?? Incoming request path: /auth/login
+2026-01-01 18:02:12 DEBUG c.e.trainerintake.security.JwtFilter - ?? Skipping JWT filter for path: /auth/login
+2026-01-01 18:02:18 INFO  c.e.trainerintake.security.JwtFilter - ?? Incoming request path: /programs/me
+2026-01-01 18:02:18 DEBUG c.e.trainerintake.security.JwtFilter - ? Found Authorization header, token extracted
+2026-01-01 18:02:18 INFO  c.e.trainerintake.security.JwtFilter - ? Username extracted from JWT: test@gmail.com
+2026-01-01 18:02:18 DEBUG c.e.trainerintake.security.JwtFilter - ? Loading UserDetails for: test@gmail.com
+2026-01-01 18:02:18 INFO  c.e.trainerintake.security.JwtFilter - ? Loaded UserDetails: test@gmail.com | Authorities: [ROLE_USER]
+2026-01-01 18:02:18 INFO  c.e.trainerintake.security.JwtFilter - ? Token validation result for test@gmail.com: true
+2026-01-01 18:02:18 INFO  c.e.trainerintake.security.JwtFilter - ? Authentication set in SecurityContext for user: test@gmail.com
+2026-01-01 18:02:19 INFO  c.e.trainerintake.security.JwtFilter - ?? Incoming request path: /programs/me
+2026-01-01 18:02:19 DEBUG c.e.trainerintake.security.JwtFilter - ? Found Authorization header, token extracted
+2026-01-01 18:02:19 INFO  c.e.trainerintake.security.JwtFilter - ? Username extracted from JWT: test@gmail.com
+2026-01-01 18:02:19 DEBUG c.e.trainerintake.security.JwtFilter - ? Loading UserDetails for: test@gmail.com
+2026-01-01 18:02:19 INFO  c.e.trainerintake.security.JwtFilter - ? Loaded UserDetails: test@gmail.com | Authorities: [ROLE_USER]
+2026-01-01 18:02:19 INFO  c.e.trainerintake.security.JwtFilter - ? Token validation result for test@gmail.com: true
+2026-01-01 18:02:19 INFO  c.e.trainerintake.security.JwtFilter - ? Authentication set in SecurityContext for user: test@gmail.com
+2026-01-01 18:06:44 DEBUG c.e.trainerintake.security.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-01 18:06:53 INFO  c.e.trainerintake.security.JwtFilter - ?? Incoming request path: /programs/me
+2026-01-01 18:06:53 DEBUG c.e.trainerintake.security.JwtFilter - ? Found Authorization header, token extracted
+2026-01-01 18:06:53 INFO  c.e.trainerintake.security.JwtFilter - ? Username extracted from JWT: test@gmail.com
+2026-01-01 18:06:53 DEBUG c.e.trainerintake.security.JwtFilter - ? Loading UserDetails for: test@gmail.com
+2026-01-01 18:06:53 INFO  c.e.trainerintake.security.JwtFilter - ? Loaded UserDetails: test@gmail.com | Authorities: [ROLE_USER]
+2026-01-01 18:06:53 INFO  c.e.trainerintake.security.JwtFilter - ? Token validation result for test@gmail.com: true
+2026-01-01 18:06:53 INFO  c.e.trainerintake.security.JwtFilter - ? Authentication set in SecurityContext for user: test@gmail.com
+2026-01-01 18:06:53 INFO  c.e.trainerintake.security.JwtFilter - ?? Incoming request path: /programs/me
+2026-01-01 18:06:53 DEBUG c.e.trainerintake.security.JwtFilter - ? Found Authorization header, token extracted
+2026-01-01 18:06:53 INFO  c.e.trainerintake.security.JwtFilter - ? Username extracted from JWT: test@gmail.com
+2026-01-01 18:06:53 DEBUG c.e.trainerintake.security.JwtFilter - ? Loading UserDetails for: test@gmail.com
+2026-01-01 18:06:53 INFO  c.e.trainerintake.security.JwtFilter - ? Loaded UserDetails: test@gmail.com | Authorities: [ROLE_USER]
+2026-01-01 18:06:54 INFO  c.e.trainerintake.security.JwtFilter - ? Token validation result for test@gmail.com: true
+2026-01-01 18:06:54 INFO  c.e.trainerintake.security.JwtFilter - ? Authentication set in SecurityContext for user: test@gmail.com
+2026-01-01 18:12:57 DEBUG c.e.trainerintake.security.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-01 18:13:01 INFO  c.e.trainerintake.security.JwtFilter - ?? Incoming request path: /programs/me
+2026-01-01 18:13:01 DEBUG c.e.trainerintake.security.JwtFilter - ? Found Authorization header, token extracted
+2026-01-01 18:13:01 INFO  c.e.trainerintake.security.JwtFilter - ? Username extracted from JWT: test@gmail.com
+2026-01-01 18:13:01 DEBUG c.e.trainerintake.security.JwtFilter - ? Loading UserDetails for: test@gmail.com
+2026-01-01 18:13:01 INFO  c.e.trainerintake.security.JwtFilter - ? Loaded UserDetails: test@gmail.com | Authorities: [ROLE_USER]
+2026-01-01 18:13:01 INFO  c.e.trainerintake.security.JwtFilter - ? Token validation result for test@gmail.com: true
+2026-01-01 18:13:01 INFO  c.e.trainerintake.security.JwtFilter - ? Authentication set in SecurityContext for user: test@gmail.com
+2026-01-01 18:13:01 INFO  c.e.trainerintake.security.JwtFilter - ?? Incoming request path: /programs/me
+2026-01-01 18:13:01 DEBUG c.e.trainerintake.security.JwtFilter - ? Found Authorization header, token extracted
+2026-01-01 18:13:01 INFO  c.e.trainerintake.security.JwtFilter - ? Username extracted from JWT: test@gmail.com
+2026-01-01 18:13:01 DEBUG c.e.trainerintake.security.JwtFilter - ? Loading UserDetails for: test@gmail.com
+2026-01-01 18:13:01 INFO  c.e.trainerintake.security.JwtFilter - ? Loaded UserDetails: test@gmail.com | Authorities: [ROLE_USER]
+2026-01-01 18:13:01 INFO  c.e.trainerintake.security.JwtFilter - ? Token validation result for test@gmail.com: true
+2026-01-01 18:13:01 INFO  c.e.trainerintake.security.JwtFilter - ? Authentication set in SecurityContext for user: test@gmail.com
+2026-01-01 18:13:49 INFO  c.e.trainerintake.security.JwtFilter - ?? Incoming request path: /auth/register
+2026-01-01 18:13:49 DEBUG c.e.trainerintake.security.JwtFilter - ?? Skipping JWT filter for path: /auth/register
+2026-01-01 18:13:58 INFO  c.e.trainerintake.security.JwtFilter - ?? Incoming request path: /auth/login
+2026-01-01 18:13:58 DEBUG c.e.trainerintake.security.JwtFilter - ?? Skipping JWT filter for path: /auth/login
+2026-01-01 18:14:02 INFO  c.e.trainerintake.security.JwtFilter - ?? Incoming request path: /survey/questions
+2026-01-01 18:14:02 DEBUG c.e.trainerintake.security.JwtFilter - ? Found Authorization header, token extracted
+2026-01-01 18:14:02 INFO  c.e.trainerintake.security.JwtFilter - ? Username extracted from JWT: mdeysh@gmail.com
+2026-01-01 18:14:02 DEBUG c.e.trainerintake.security.JwtFilter - ? Loading UserDetails for: mdeysh@gmail.com
+2026-01-01 18:14:02 INFO  c.e.trainerintake.security.JwtFilter - ? Loaded UserDetails: mdeysh@gmail.com | Authorities: [ROLE_USER]
+2026-01-01 18:14:02 INFO  c.e.trainerintake.security.JwtFilter - ? Token validation result for mdeysh@gmail.com: true
+2026-01-01 18:14:02 INFO  c.e.trainerintake.security.JwtFilter - ? Authentication set in SecurityContext for user: mdeysh@gmail.com
+2026-01-01 18:14:02 INFO  c.e.trainerintake.security.JwtFilter - ?? Incoming request path: /survey/questions
+2026-01-01 18:14:02 DEBUG c.e.trainerintake.security.JwtFilter - ? Found Authorization header, token extracted
+2026-01-01 18:14:02 INFO  c.e.trainerintake.security.JwtFilter - ? Username extracted from JWT: mdeysh@gmail.com
+2026-01-01 18:14:02 DEBUG c.e.trainerintake.security.JwtFilter - ? Loading UserDetails for: mdeysh@gmail.com
+2026-01-01 18:14:02 INFO  c.e.trainerintake.security.JwtFilter - ? Loaded UserDetails: mdeysh@gmail.com | Authorities: [ROLE_USER]
+2026-01-01 18:14:02 INFO  c.e.trainerintake.security.JwtFilter - ? Token validation result for mdeysh@gmail.com: true
+2026-01-01 18:14:02 INFO  c.e.trainerintake.security.JwtFilter - ? Authentication set in SecurityContext for user: mdeysh@gmail.com
+2026-01-01 18:14:27 INFO  c.e.trainerintake.security.JwtFilter - ?? Incoming request path: /survey/submit
+2026-01-01 18:14:27 DEBUG c.e.trainerintake.security.JwtFilter - ? Found Authorization header, token extracted
+2026-01-01 18:14:27 INFO  c.e.trainerintake.security.JwtFilter - ? Username extracted from JWT: mdeysh@gmail.com
+2026-01-01 18:14:27 DEBUG c.e.trainerintake.security.JwtFilter - ? Loading UserDetails for: mdeysh@gmail.com
+2026-01-01 18:14:28 INFO  c.e.trainerintake.security.JwtFilter - ? Loaded UserDetails: mdeysh@gmail.com | Authorities: [ROLE_USER]
+2026-01-01 18:14:28 INFO  c.e.trainerintake.security.JwtFilter - ? Token validation result for mdeysh@gmail.com: true
+2026-01-01 18:14:28 INFO  c.e.trainerintake.security.JwtFilter - ? Authentication set in SecurityContext for user: mdeysh@gmail.com
+2026-01-01 18:14:47 INFO  c.e.trainerintake.security.JwtFilter - ?? Incoming request path: /programs/me
+2026-01-01 18:14:47 DEBUG c.e.trainerintake.security.JwtFilter - ? Found Authorization header, token extracted
+2026-01-01 18:14:47 INFO  c.e.trainerintake.security.JwtFilter - ? Username extracted from JWT: mdeysh@gmail.com
+2026-01-01 18:14:47 DEBUG c.e.trainerintake.security.JwtFilter - ? Loading UserDetails for: mdeysh@gmail.com
+2026-01-01 18:14:47 INFO  c.e.trainerintake.security.JwtFilter - ? Loaded UserDetails: mdeysh@gmail.com | Authorities: [ROLE_USER]
+2026-01-01 18:14:47 INFO  c.e.trainerintake.security.JwtFilter - ? Token validation result for mdeysh@gmail.com: true
+2026-01-01 18:14:47 INFO  c.e.trainerintake.security.JwtFilter - ? Authentication set in SecurityContext for user: mdeysh@gmail.com
+2026-01-01 18:14:47 INFO  c.e.trainerintake.security.JwtFilter - ?? Incoming request path: /programs/me
+2026-01-01 18:14:47 DEBUG c.e.trainerintake.security.JwtFilter - ? Found Authorization header, token extracted
+2026-01-01 18:14:47 INFO  c.e.trainerintake.security.JwtFilter - ? Username extracted from JWT: mdeysh@gmail.com
+2026-01-01 18:14:47 DEBUG c.e.trainerintake.security.JwtFilter - ? Loading UserDetails for: mdeysh@gmail.com
+2026-01-01 18:14:47 INFO  c.e.trainerintake.security.JwtFilter - ? Loaded UserDetails: mdeysh@gmail.com | Authorities: [ROLE_USER]
+2026-01-01 18:14:47 INFO  c.e.trainerintake.security.JwtFilter - ? Token validation result for mdeysh@gmail.com: true
+2026-01-01 18:14:47 INFO  c.e.trainerintake.security.JwtFilter - ? Authentication set in SecurityContext for user: mdeysh@gmail.com
+2026-01-01 18:14:50 INFO  c.e.trainerintake.security.JwtFilter - ?? Incoming request path: /survey/questions
+2026-01-01 18:14:50 DEBUG c.e.trainerintake.security.JwtFilter - ? Found Authorization header, token extracted
+2026-01-01 18:14:50 INFO  c.e.trainerintake.security.JwtFilter - ? Username extracted from JWT: mdeysh@gmail.com
+2026-01-01 18:14:50 DEBUG c.e.trainerintake.security.JwtFilter - ? Loading UserDetails for: mdeysh@gmail.com
+2026-01-01 18:14:50 INFO  c.e.trainerintake.security.JwtFilter - ? Loaded UserDetails: mdeysh@gmail.com | Authorities: [ROLE_USER]
+2026-01-01 18:14:50 INFO  c.e.trainerintake.security.JwtFilter - ? Token validation result for mdeysh@gmail.com: true
+2026-01-01 18:14:50 INFO  c.e.trainerintake.security.JwtFilter - ? Authentication set in SecurityContext for user: mdeysh@gmail.com
+2026-01-01 18:14:50 INFO  c.e.trainerintake.security.JwtFilter - ?? Incoming request path: /survey/questions
+2026-01-01 18:14:50 DEBUG c.e.trainerintake.security.JwtFilter - ? Found Authorization header, token extracted
+2026-01-01 18:14:50 INFO  c.e.trainerintake.security.JwtFilter - ? Username extracted from JWT: mdeysh@gmail.com
+2026-01-01 18:14:50 DEBUG c.e.trainerintake.security.JwtFilter - ? Loading UserDetails for: mdeysh@gmail.com
+2026-01-01 18:14:50 INFO  c.e.trainerintake.security.JwtFilter - ? Loaded UserDetails: mdeysh@gmail.com | Authorities: [ROLE_USER]
+2026-01-01 18:14:50 INFO  c.e.trainerintake.security.JwtFilter - ? Token validation result for mdeysh@gmail.com: true
+2026-01-01 18:14:50 INFO  c.e.trainerintake.security.JwtFilter - ? Authentication set in SecurityContext for user: mdeysh@gmail.com
+2026-01-01 18:15:13 INFO  c.e.trainerintake.security.JwtFilter - ?? Incoming request path: /survey/submit
+2026-01-01 18:15:13 DEBUG c.e.trainerintake.security.JwtFilter - ? Found Authorization header, token extracted
+2026-01-01 18:15:13 INFO  c.e.trainerintake.security.JwtFilter - ? Username extracted from JWT: mdeysh@gmail.com
+2026-01-01 18:15:13 DEBUG c.e.trainerintake.security.JwtFilter - ? Loading UserDetails for: mdeysh@gmail.com
+2026-01-01 18:15:13 INFO  c.e.trainerintake.security.JwtFilter - ? Loaded UserDetails: mdeysh@gmail.com | Authorities: [ROLE_USER]
+2026-01-01 18:15:13 INFO  c.e.trainerintake.security.JwtFilter - ? Token validation result for mdeysh@gmail.com: true
+2026-01-01 18:15:13 INFO  c.e.trainerintake.security.JwtFilter - ? Authentication set in SecurityContext for user: mdeysh@gmail.com
+2026-01-01 18:15:25 INFO  c.e.trainerintake.security.JwtFilter - ?? Incoming request path: /programs/me
+2026-01-01 18:15:25 DEBUG c.e.trainerintake.security.JwtFilter - ? Found Authorization header, token extracted
+2026-01-01 18:15:25 INFO  c.e.trainerintake.security.JwtFilter - ? Username extracted from JWT: mdeysh@gmail.com
+2026-01-01 18:15:25 DEBUG c.e.trainerintake.security.JwtFilter - ? Loading UserDetails for: mdeysh@gmail.com
+2026-01-01 18:15:25 INFO  c.e.trainerintake.security.JwtFilter - ? Loaded UserDetails: mdeysh@gmail.com | Authorities: [ROLE_USER]
+2026-01-01 18:15:25 INFO  c.e.trainerintake.security.JwtFilter - ? Token validation result for mdeysh@gmail.com: true
+2026-01-01 18:15:25 INFO  c.e.trainerintake.security.JwtFilter - ? Authentication set in SecurityContext for user: mdeysh@gmail.com
+2026-01-01 18:15:25 INFO  c.e.trainerintake.security.JwtFilter - ?? Incoming request path: /programs/me
+2026-01-01 18:15:25 DEBUG c.e.trainerintake.security.JwtFilter - ? Found Authorization header, token extracted
+2026-01-01 18:15:25 INFO  c.e.trainerintake.security.JwtFilter - ? Username extracted from JWT: mdeysh@gmail.com
+2026-01-01 18:15:25 DEBUG c.e.trainerintake.security.JwtFilter - ? Loading UserDetails for: mdeysh@gmail.com
+2026-01-01 18:15:25 INFO  c.e.trainerintake.security.JwtFilter - ? Loaded UserDetails: mdeysh@gmail.com | Authorities: [ROLE_USER]
+2026-01-01 18:15:25 INFO  c.e.trainerintake.security.JwtFilter - ? Token validation result for mdeysh@gmail.com: true
+2026-01-01 18:15:25 INFO  c.e.trainerintake.security.JwtFilter - ? Authentication set in SecurityContext for user: mdeysh@gmail.com

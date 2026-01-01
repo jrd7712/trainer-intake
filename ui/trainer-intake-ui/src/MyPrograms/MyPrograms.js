@@ -10,7 +10,7 @@ function MyPrograms() {
     async function loadPrograms() {
       try {
         const data = await apiFetch("http://localhost:8080/programs/me");
-        setPrograms(data || []);
+        setPrograms(Array.isArray(data) ? data : []);
       } catch (err) {
         console.error("Error loading programs:", err);
         setError(err);
@@ -26,7 +26,7 @@ function MyPrograms() {
   return (
     <div style={{ margin: "20px" }}>
       <h2>My Programs</h2>
-      {error && <p style={{ color: "red" }}>Failed to load programs.</p>}
+      {error && <p style={{ color: "red" }}>Failed to load programs: {error.message}</p>}
       {programs.length === 0 ? (
         <p>No programs found.</p>
       ) : (

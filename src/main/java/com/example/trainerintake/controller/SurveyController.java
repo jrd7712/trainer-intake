@@ -9,7 +9,6 @@ import com.example.trainerintake.model.WorkoutPlan;
 import com.example.trainerintake.service.SurveyService;
 import com.example.trainerintake.repository.UserRepository;
 import com.example.trainerintake.repository.QuestionRepository;
-import com.example.trainerintake.repository.SurveyRepository;
 import com.example.trainerintake.repository.WorkoutPlanRepository;
 import org.springframework.web.bind.annotation.*;
 
@@ -74,8 +73,8 @@ public class SurveyController {
     @PostMapping("/submit")
     public Map<String, Object> submitAnswers(@RequestBody List<AnswerRequest> answerRequests,
                                              Principal principal) {
-        User user = userRepository.findByUsername(principal.getName())
-                                  .orElseThrow(() -> new RuntimeException("User not found"));
+        User user = userRepository.findByEmailIgnoreCase(principal.getName())
+            .orElseThrow(() -> new RuntimeException("User not found"));
 
         List<Answer> answers = answerRequests.stream()
             .map(req -> {
