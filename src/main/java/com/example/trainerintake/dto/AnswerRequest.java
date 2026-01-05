@@ -1,20 +1,20 @@
 package com.example.trainerintake.dto;
 
 public class AnswerRequest {
-    private Integer surveyId;
-    private Integer questionId;
+    private Long surveyId;
+    private Long questionId;
     private String response;
     // getters and setters
-    public Integer getSurveyId() {
+    public Long getSurveyId() {
         return surveyId;
     }
-    public void setSurveyId(Integer surveyId) {
+    public void setSurveyId(Long surveyId) {
         this.surveyId = surveyId;
     }
-    public Integer getQuestionId() {
+    public Long getQuestionId() {
         return questionId;
     }
-    public void setQuestionId(Integer questionId) {
+    public void setQuestionId(Long questionId) {
         this.questionId = questionId;
     }
     public String getResponse() {

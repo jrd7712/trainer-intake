@@ -1,14 +1,29 @@
-// src/NavBar.jsx
 import { Link } from "react-router-dom";
+import { useCurrentUser } from "../CurrentUser/CurrentUser";
+import "./NavBar.css";
 
 function NavBar() {
+  const { user, loading } = useCurrentUser();
+
   return (
-    <nav style={{ padding: "10px", background: "#eee" }}>
-      <Link to="/login" style={{ marginRight: "10px" }}>Login</Link>
-      <Link to="/register" style={{ marginRight: "10px" }}>Register</Link>
-      <Link to="/dashboard"style={{ marginRight: "10px" }}>Dashboard</Link>
-      <Link to="/CreateWorkout" style={{ marginRight: "10px" }}>Create Workout</Link>
-      <Link to="/MyPrograms" style={{ marginRight: "10px" }}>MyPrograms</Link>
+    <nav className="navbar">
+      <div>
+        {!loading && !user && (
+          <>
+            <Link to="/login">Login</Link>
+            <Link to="/register">Register</Link>
+          </>
+        )}
+
+        <Link to="/dashboard">Dashboard</Link>
+        <Link to="/CreateWorkout">Create Workout</Link>
+        <Link to="/MyPrograms">MyPrograms</Link>
+      </div>
+
+      <div>
+        {!loading && user && <>Signed in as {user.firstName}</>}
+        {!loading && !user && <>Not signed in</>}
+      </div>
     </nav>
   );
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { apiFetch } from "../api";
+import "./MyPrograms.css";
 
 function MyPrograms() {
   const [programs, setPrograms] = useState([]);
@@ -7,35 +8,93 @@ function MyPrograms() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    async function loadPrograms() {
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+      setLoading(false);
+      return;
+    }
+
+    let cancelled = false;
+
+    const loadPrograms = async () => {
       try {
         const data = await apiFetch("http://localhost:8080/programs/me");
-        setPrograms(Array.isArray(data) ? data : []);
+        if (!cancelled) {
+          setPrograms(Array.isArray(data) ? data : []);
+        }
       } catch (err) {
-        console.error("Error loading programs:", err);
-        setError(err);
+        if (!cancelled) {
+          console.error("Error loading programs:", err);
+          setError(err);
+        }
       } finally {
-        setLoading(false);
+        if (!cancelled) {
+          setLoading(false);
+        }
       }
-    }
+    };
+
     loadPrograms();
+
+    return () => {
+      cancelled = true;
+    };
   }, []);
+
+  const deleteProgram = async (id) => {
+    try {
+      await apiFetch(`http://localhost:8080/programs/${id}`, {
+        method: "DELETE",
+      });
+
+      setPrograms((prev) => prev.filter((p) => p.id !== id));
+    } catch (err) {
+      console.error("Error deleting program:", err);
+      alert("Failed to delete program.");
+    }
+  };
 
   if (loading) return <p>Loading your programs...</p>;
 
   return (
-    <div style={{ margin: "20px" }}>
-      <h2>My Programs</h2>
-      {error && <p style={{ color: "red" }}>Failed to load programs: {error.message}</p>}
+    <div className="myprograms-container">
+      <h2 className="myprograms-title">My Programs</h2>
+
+      {error && (
+        <p className="myprograms-error">
+          Failed to load programs: {error.message}
+        </p>
+      )}
+
       {programs.length === 0 ? (
         <p>No programs found.</p>
       ) : (
-        <ul style={{ listStyle: "none", padding: 0 }}>
+        <ul className="program-list">
           {programs.map((p) => (
-            <li key={p.id} style={{ marginBottom: "20px", border: "1px solid #ccc", padding: "10px" }}>
-              <p><strong>Survey ID:</strong> {p.survey?.surveyId ?? "N/A"}</p>
-              <p><strong>Created At:</strong> {p.createdAt ? new Date(p.createdAt).toLocaleString() : "Unknown"}</p>
-              <pre style={{ whiteSpace: "pre-wrap" }}>{p.planText}</pre>
+            <li key={p.id} className="program-card">
+              <div className="program-card-header">
+                <div className="program-info">
+                  <p>
+                    <strong>Survey #:</strong> {p.surveyNumber ?? "N/A"}
+                  </p>
+                  <p>
+                    <strong>Created At:</strong>{" "}
+                    {p.createdAt
+                      ? new Date(p.createdAt).toLocaleString()
+                      : "Unknown"}
+                  </p>
+                </div>
+
+                <button
+                  className="delete-btn"
+                  onClick={() => deleteProgram(p.id)}
+                >
+                  Delete
+                </button>
+              </div>
+
+              <pre className="program-plan">{p.planText}</pre>
             </li>
           ))}
         </ul>

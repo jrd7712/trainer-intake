@@ -1,0 +1,27 @@
+.navbar {
+  background: var(--color-primary);
+  color: var(--color-text-light);
+  padding: var(--spacing-md) var(--spacing-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Left side links */
+.navbar a {
+  margin-right: var(--spacing-md);
+  color: var(--color-text-light);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition-fast);
+}
+
+.navbar a:hover {
+  color: var(--color-surface);
+}
+
+/* Right side user text */
+.navbar div:last-child {
+  font-weight: 600;
+}

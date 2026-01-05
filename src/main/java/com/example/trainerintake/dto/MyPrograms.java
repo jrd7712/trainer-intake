@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 public record MyPrograms(
         Long id,
-        Integer surveyId,
+        Long surveyNumber,
         String planText,
         LocalDateTime createdAt
 ) {}

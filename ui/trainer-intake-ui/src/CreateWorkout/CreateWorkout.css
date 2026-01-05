@@ -1,0 +1,134 @@
+.create-workout-container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: var(--spacing-xl);
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  animation: fadeIn 0.5s ease;
+  position: relative;
+  padding-bottom: 60px;
+}
+
+.create-workout-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+}
+
+/* Question Section */
+.question-section {
+  margin-bottom: var(--spacing-lg);
+}
+
+.question-section h3 {
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.question-section label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Inputs */
+.question-section input,
+.question-section select {
+  width: 100%;
+  padding: var(--spacing-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  background: var(--color-bg);
+  transition: var(--transition-fast);
+}
+
+.question-section input:focus,
+.question-section select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(214, 40, 40, 0.2);
+}
+
+/* Checkbox list */
+.checkbox-list label {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing-xs);
+}
+
+.checkbox-list input {
+  margin-right: var(--spacing-sm);
+}
+
+/* Navigation Buttons */
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--spacing-md);
+}
+
+.nav-buttons button {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition-fast);
+}
+
+.nav-buttons button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.nav-buttons button:not(:disabled) {
+  background: var(--color-primary);
+  color: var(--color-text-light);
+}
+
+.nav-buttons button:not(:disabled):hover {
+  background: var(--color-primary-hover);
+}
+
+/* Progress text */
+.progress-text {
+  margin-top: var(--spacing-md);
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Workout Plan Box */
+.workout-plan-box {
+  margin-top: var(--spacing-xl);
+  padding: var(--spacing-lg);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.workout-plan-box h3 {
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+.survey-id-box {
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: #f0f7ff;
+  border: 1px solid #b3d4fc;
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  color: #003a75;
+  font-weight: 600;
+}
+
+.workout-plan-text {
+  white-space: pre-wrap;
+  font-size: 1rem;
+  line-height: 1.5;
+}

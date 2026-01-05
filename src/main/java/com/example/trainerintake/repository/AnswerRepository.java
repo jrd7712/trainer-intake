@@ -8,11 +8,11 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface AnswerRepository extends JpaRepository<Answer, Integer> {
+public interface AnswerRepository extends JpaRepository<Answer, Long> {
     // Query by Survey entity reference
     List<Answer> findBySurvey(Survey survey);
 
     // Alternatively, query by surveyId directly
-    List<Answer> findBySurvey_SurveyId(Integer surveyId);
+    List<Answer> findBySurvey_SurveyId(Long surveyId);
 }
 

@@ -27,7 +27,7 @@ public class UserController {
 
     // 2. Get client by ID
     @GetMapping("/{id}")
-    public ResponseEntity<User> getClient(@PathVariable Integer id) {
+    public ResponseEntity<User> getClient(@PathVariable Long id) {
         return userService.getClientById(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
@@ -41,7 +41,7 @@ public class UserController {
 
     // 4. Delete client by ID
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteClient(@PathVariable Integer id) {
+    public ResponseEntity<Void> deleteClient(@PathVariable Long id) {
         userService.deleteClient(id);
         return ResponseEntity.noContent().build();
     }

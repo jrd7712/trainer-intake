@@ -23,7 +23,7 @@ public class PlanController {
     }
 
     @GetMapping("/{id}")
-    public WorkoutPlanResponse generatePlan(@PathVariable Integer id) {
+    public WorkoutPlanResponse generatePlan(@PathVariable Long id) {
         // Call the new method that returns just the AI text
         String aiPlanText = planService.generatePlanTextFromSurvey(id);
 

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./RegisterForm.css";
 
 function RegisterForm() {
   const [username, setUsername] = useState("");
@@ -35,7 +36,7 @@ function RegisterForm() {
   };
 
   return (
-    <form onSubmit={handleRegister}>
+    <form className="register-form" onSubmit={handleRegister}>
       <h2>Register</h2>
       <input
         type="text"

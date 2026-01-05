@@ -4,8 +4,9 @@ import LoginForm from "./LoginForm/LoginForm";
 import RegisterForm from "./RegisterForm/RegisterForm";
 import Dashboard from "./Dashboard/Dashboard";
 import CreateWorkout from "./CreateWorkout/CreateWorkout";
-import Survey from "./Survey/Survey"; // your survey component
+
 import MyPrograms from "./MyPrograms/MyPrograms"
+import LandingPage from "./LandingPage/LandingPage";
 
 import { jwtDecode } from "jwt-decode";
 
@@ -24,7 +25,7 @@ function AppRoutes() {
 
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="/login" />} />
+      <Route path="/" element={<LandingPage />} />
       <Route path="/login" element={<LoginForm />} />
       <Route path="/register" element={<RegisterForm />} />
       <Route
@@ -32,7 +33,7 @@ function AppRoutes() {
         element={token ? <Dashboard /> : <Navigate to="/login" />}
       />
       <Route path="/CreateWorkout" element={<CreateWorkout />} />
-      <Route path="/survey" element={<Survey />} />
+  
       <Route path="/MyPrograms" element={<MyPrograms userId={userId} />} />
     </Routes>
   );

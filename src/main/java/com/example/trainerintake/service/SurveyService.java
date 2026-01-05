@@ -1,6 +1,7 @@
 package com.example.trainerintake.service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import com.example.trainerintake.model.Question;
 import com.example.trainerintake.model.Answer;
@@ -11,11 +12,8 @@ import com.example.trainerintake.repository.QuestionRepository;
 import com.example.trainerintake.repository.AnswerRepository;
 import com.example.trainerintake.repository.SurveyRepository;
 import com.example.trainerintake.repository.WorkoutPlanRepository;
-import com.example.trainerintake.service.PlanService;
 
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class SurveyService {
@@ -30,7 +28,7 @@ public class SurveyService {
                          AnswerRepository answerRepository,
                          SurveyRepository surveyRepository,
                          WorkoutPlanRepository workoutPlanRepository,
-                        PlanService planService) {
+                         PlanService planService) {
         this.questionRepository = questionRepository;
         this.answerRepository = answerRepository;
         this.surveyRepository = surveyRepository;
@@ -44,37 +42,40 @@ public class SurveyService {
     }
 
     // Create a new survey for a user and save answers
-     public Survey createSurveyWithAnswers(User user, List<Answer> answers) {
-        // 1. Create survey
+    public Survey createSurveyWithAnswers(User user, List<Answer> answers) {
+
+        // 1. Determine next survey number for this user
+        Long lastNumber = surveyRepository.findLastSurveyNumberForUser(user.getId());
+        Long nextNumber = (lastNumber == null ? 1L : lastNumber + 1);
+
+        // 2. Create survey
         Survey survey = new Survey();
         survey.setUser(user);
+        survey.setSurveyNumber(nextNumber);
         survey.setCreatedAt(LocalDateTime.now());
         survey = surveyRepository.save(survey);
 
-        // 2. Save answers
+        // 3. Save answers
         for (Answer answer : answers) {
             answer.setSurvey(survey);
         }
         answerRepository.saveAll(answers);
 
-        // 3. Generate workout plan text using AI
+        // 4. Generate workout plan text using AI
         String aiPlanText = planService.generatePlanTextFromSurvey(survey.getSurveyId());
 
-        // 4. Create workout plan entry
+        // 5. Create workout plan entry
         WorkoutPlan plan = new WorkoutPlan();
         plan.setSurvey(survey);
-        plan.setPlanText(aiPlanText); // ✅ AI text instead of placeholder
+        plan.setPlanText(aiPlanText);
         plan.setCreatedAt(LocalDateTime.now());
         workoutPlanRepository.save(plan);
 
-    return survey;
-}
-
-
-
+        return survey;
+    }
 
     // Get answers for a specific survey
-    public List<Answer> getAnswersForSurvey(Integer surveyId) { // ✅ use Long
+    public List<Answer> getAnswersForSurvey(Long surveyId) {
         Survey survey = surveyRepository.findById(surveyId)
                 .orElseThrow(() -> new IllegalArgumentException("Survey not found: " + surveyId));
 

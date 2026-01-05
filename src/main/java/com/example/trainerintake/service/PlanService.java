@@ -30,7 +30,7 @@ public class PlanService {
      * Generate workout plan text from survey answers using AI.
      * This method does NOT save anything to the database.
      */
-    public String generatePlanTextFromSurvey(Integer surveyId) {
+    public String generatePlanTextFromSurvey(Long surveyId) {
         List<Answer> answers = answerRepo.findBySurvey_SurveyId(surveyId);
 
         // Build prompt

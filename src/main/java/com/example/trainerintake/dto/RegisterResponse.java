@@ -3,7 +3,7 @@ package com.example.trainerintake.dto;
 public class RegisterResponse {
     private String message;
     private boolean success;
-    private Integer userId;     // ✅ optional: expose the new user’s ID
+    private Long userId;     // ✅ optional: expose the new user’s ID
     private String username;    // ✅ optional: expose the new user’s username
 
     // Constructors
@@ -14,7 +14,7 @@ public class RegisterResponse {
         this.success = success;
     }
 
-    public RegisterResponse(String message, boolean success, Integer userId, String username) {
+    public RegisterResponse(String message, boolean success, Long userId, String username) {
         this.message = message;
         this.success = success;
         this.userId = userId;
@@ -36,10 +36,10 @@ public class RegisterResponse {
         this.success = success; 
     }
 
-    public Integer getUserId() { 
+    public Long getUserId() { 
         return userId; 
     }
-    public void setUserId(Integer userId) { 
+    public void setUserId(Long userId) { 
         this.userId = userId; 
     }
 

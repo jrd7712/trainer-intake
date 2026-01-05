@@ -1,0 +1,6 @@
+.app-layout {
+  background: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+  font-family: var(--font-body);
+}

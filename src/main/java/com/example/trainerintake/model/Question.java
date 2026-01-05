@@ -5,17 +5,23 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "questions")
 public class Question {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "question_id")
     private Long questionId;
 
-    @Column(name = "prompt")  // ✅ this is the actual question text
+    @Column(name = "prompt")
     private String questionText;
 
-    @Column(name = "section")   // ✅ new column
+    @Column(name = "section")
     private String section;
 
+    @Column(name = "input_type")   // ⭐ text, multiple_choice, number, etc.
+    private String inputType;
+
+    @Column(columnDefinition = "TEXT")   // ⭐ JSON array of choices
+    private String choices;
 
     // Getters and setters
     public Long getQuestionId() { return questionId; }
@@ -24,11 +30,12 @@ public class Question {
     public String getQuestionText() { return questionText; }
     public void setQuestionText(String questionText) { this.questionText = questionText; }
 
-    public String getSection() {
-        return section;
-    }
+    public String getSection() { return section; }
+    public void setSection(String section) { this.section = section; }
 
-    public void setSection(String section) {
-        this.section = section;
-    }
+    public String getInputType() { return inputType; }
+    public void setInputType(String inputType) { this.inputType = inputType; }
+
+    public String getChoices() { return choices; }
+    public void setChoices(String choices) { this.choices = choices; }
 }

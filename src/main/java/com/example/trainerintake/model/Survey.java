@@ -10,7 +10,7 @@ public class Survey {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)   // ✅ auto-generated PK
-    private Integer surveyId;
+    private Long surveyId;
 
     @ManyToOne
     @JoinColumn(name = "client_id", nullable = false)       // ✅ FK to User.id
@@ -25,9 +25,12 @@ public class Survey {
     @OneToOne(mappedBy = "survey", cascade = CascadeType.ALL)
     private WorkoutPlan workoutPlan;
 
+    @Column(name = "survey_number")
+    private Long surveyNumber;
+
     // getters/setters
-    public Integer getSurveyId() { return surveyId; }
-    public void setSurveyId(Integer surveyId) { this.surveyId = surveyId; }
+    public Long getSurveyId() { return surveyId; }
+    public void setSurveyId(Long surveyId) { this.surveyId = surveyId; }
 
     public User getUser() { return user; }
     public void setUser(User user) { this.user = user; }
@@ -40,4 +43,12 @@ public class Survey {
 
     public WorkoutPlan getWorkoutPlan() { return workoutPlan; }
     public void setWorkoutPlan(WorkoutPlan workoutPlan) { this.workoutPlan = workoutPlan; }
+
+    public Long getSurveyNumber() {
+        return surveyNumber;
+    }
+
+    public void setSurveyNumber(Long surveyNumber) {
+        this.surveyNumber = surveyNumber;
+    }
 }

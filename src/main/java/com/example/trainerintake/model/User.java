@@ -11,7 +11,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "client_id")
 
-    private Integer id;   // ✅ keep Integer for consistency
+    private Long id;   // ✅ keep Integer for consistency
 
     @Column(nullable = false, unique = true)
     private String email;
@@ -33,8 +33,8 @@ public class User {
     private List<Survey> surveys;
 
     // Getters and setters
-    public Integer getId() { return id; }
-    public void setId(Integer id) { this.id = id; }
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
 
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }

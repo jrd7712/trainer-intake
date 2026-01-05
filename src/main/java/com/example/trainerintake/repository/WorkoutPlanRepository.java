@@ -8,9 +8,9 @@ import com.example.trainerintake.model.Survey;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface WorkoutPlanRepository extends JpaRepository<WorkoutPlan, Integer> {
+public interface WorkoutPlanRepository extends JpaRepository<WorkoutPlan, Long> {
     Optional<WorkoutPlan> findBySurvey(Survey survey);
 
     // ✅ New method: fetch all workout plans tied to surveys for a given user
-    List<WorkoutPlan> findBySurvey_User_Id(Integer userId);
+    List<WorkoutPlan> findBySurvey_User_Id(Long userId);
 }

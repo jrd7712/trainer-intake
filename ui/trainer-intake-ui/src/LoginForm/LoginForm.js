@@ -1,7 +1,8 @@
 import { useState } from "react";
+import "./LoginForm.css";
 
 function LoginForm() {
-  const [username, setUsername] = useState("");   // ✅ use username
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const handleLogin = async (e) => {
@@ -11,14 +12,14 @@ function LoginForm() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          username: username,   // ✅ backend expects this
+          username: username,
           password: password
         }),
       });
 
       if (response.ok) {
         const data = await response.json();
-        localStorage.setItem("token", data.token); // store JWT
+        localStorage.setItem("token", data.token);
         alert("Login successful!");
         window.location.href = "/dashboard";
       } else {
@@ -31,8 +32,9 @@ function LoginForm() {
   };
 
   return (
-    <form onSubmit={handleLogin}>
+    <form className="login-form" onSubmit={handleLogin}>
       <h2>Login</h2>
+
       <input
         type="text"
         placeholder="Username"
@@ -40,6 +42,7 @@ function LoginForm() {
         onChange={(e) => setUsername(e.target.value)}
         required
       />
+
       <input
         type="password"
         placeholder="Password"
@@ -47,6 +50,7 @@ function LoginForm() {
         onChange={(e) => setPassword(e.target.value)}
         required
       />
+
       <button type="submit">Login</button>
     </form>
   );

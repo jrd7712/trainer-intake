@@ -1,7 +1,7 @@
 package com.example.trainerintake.config;
 
-import com.example.trainerintake.security.JwtFilter;
-import jakarta.servlet.http.HttpServletResponse;
+import java.util.List;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -16,7 +16,9 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
-import java.util.List;
+import com.example.trainerintake.security.JwtFilter;
+
+import jakarta.servlet.http.HttpServletResponse;
 
 @Configuration
 public class SecurityConfig {
@@ -59,11 +61,11 @@ public class SecurityConfig {
             .cors(cors -> cors.configurationSource(corsConfigurationSource()))
             .csrf(csrf -> csrf.disable())
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/auth/**").permitAll()
-                .requestMatchers("/programs/**").authenticated()
+                .requestMatchers("/auth/login", "/auth/register").permitAll()
+                .requestMatchers("/auth/me").authenticated()
+                .requestMatchers("/programs/**").authenticated()   // <-- PROTECTED again
                 .anyRequest().authenticated()
             )
-
             .sessionManagement(session -> session
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             )
@@ -75,6 +77,6 @@ public class SecurityConfig {
             )
             .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
 
-            return http.build();
-        }
+        return http.build();
+    }
 }
