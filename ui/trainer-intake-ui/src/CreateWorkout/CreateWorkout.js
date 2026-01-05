@@ -16,6 +16,7 @@ function CreateWorkout() {
         const data = await apiFetch("http://localhost:8080/survey/questions");
         const questionArray = Array.isArray(data) ? data : data.questions;
         setQuestions(questionArray || []);
+        console.log("RAW RESPONSE:", data);
       } catch (err) {
         console.error("Error loading survey questions:", err);
       }
@@ -108,13 +109,13 @@ function CreateWorkout() {
                 );
               }
 
-              // MULTISELECT
+              // MULTISELECT (fixed layout)
               if (inputType === "multiselect" && Array.isArray(choices)) {
                 const selected = answers[q.questionId] || [];
                 return (
                   <div className="checkbox-list">
                     {choices.map((choice, i) => (
-                      <label key={i}>
+                      <div className="checkbox-option" key={i}>
                         <input
                           type="checkbox"
                           checked={selected.includes(choice)}
@@ -122,8 +123,8 @@ function CreateWorkout() {
                             handleMultiSelectChange(q.questionId, choice)
                           }
                         />
-                        {choice}
-                      </label>
+                        <label>{choice}</label>
+                      </div>
                     ))}
                   </div>
                 );
