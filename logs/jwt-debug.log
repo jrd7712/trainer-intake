@@ -4848,3 +4848,32 @@ io.jsonwebtoken.ExpiredJwtException: JWT expired at 2026-01-06T16:06:08Z. Curren
 2026-01-07 11:13:06 INFO  c.e.trainerintake.security.JwtFilter - ? Loaded UserDetails: test@gmail.com | Authorities: [ROLE_USER]
 2026-01-07 11:13:06 INFO  c.e.trainerintake.security.JwtFilter - ? Token validation result for test@gmail.com: true
 2026-01-07 11:13:06 INFO  c.e.trainerintake.security.JwtFilter - ? Authentication set in SecurityContext for user: test@gmail.com
+2026-01-07 11:14:38 DEBUG c.e.trainerintake.security.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-07 11:14:40 INFO  c.e.trainerintake.security.JwtFilter - ?? Incoming request path: /programs/me
+2026-01-07 11:14:40 DEBUG c.e.trainerintake.security.JwtFilter - ? Found Authorization header, token extracted
+2026-01-07 11:14:40 INFO  c.e.trainerintake.security.JwtFilter - ? Username extracted from JWT: test@gmail.com
+2026-01-07 11:14:40 DEBUG c.e.trainerintake.security.JwtFilter - ? Loading UserDetails for: test@gmail.com
+2026-01-07 11:14:41 INFO  c.e.trainerintake.security.JwtFilter - ? Loaded UserDetails: test@gmail.com | Authorities: [ROLE_USER]
+2026-01-07 11:14:41 INFO  c.e.trainerintake.security.JwtFilter - ? Token validation result for test@gmail.com: true
+2026-01-07 11:14:41 INFO  c.e.trainerintake.security.JwtFilter - ? Authentication set in SecurityContext for user: test@gmail.com
+2026-01-07 11:14:41 INFO  c.e.trainerintake.security.JwtFilter - ?? Incoming request path: /programs/me
+2026-01-07 11:14:41 DEBUG c.e.trainerintake.security.JwtFilter - ? Found Authorization header, token extracted
+2026-01-07 11:14:41 INFO  c.e.trainerintake.security.JwtFilter - ? Username extracted from JWT: test@gmail.com
+2026-01-07 11:14:41 DEBUG c.e.trainerintake.security.JwtFilter - ? Loading UserDetails for: test@gmail.com
+2026-01-07 11:14:41 INFO  c.e.trainerintake.security.JwtFilter - ? Loaded UserDetails: test@gmail.com | Authorities: [ROLE_USER]
+2026-01-07 11:14:41 INFO  c.e.trainerintake.security.JwtFilter - ? Token validation result for test@gmail.com: true
+2026-01-07 11:14:41 INFO  c.e.trainerintake.security.JwtFilter - ? Authentication set in SecurityContext for user: test@gmail.com
+2026-01-07 11:14:45 INFO  c.e.trainerintake.security.JwtFilter - ?? Incoming request path: /survey/questions
+2026-01-07 11:14:45 DEBUG c.e.trainerintake.security.JwtFilter - ? Found Authorization header, token extracted
+2026-01-07 11:14:45 INFO  c.e.trainerintake.security.JwtFilter - ? Username extracted from JWT: test@gmail.com
+2026-01-07 11:14:45 DEBUG c.e.trainerintake.security.JwtFilter - ? Loading UserDetails for: test@gmail.com
+2026-01-07 11:14:45 INFO  c.e.trainerintake.security.JwtFilter - ? Loaded UserDetails: test@gmail.com | Authorities: [ROLE_USER]
+2026-01-07 11:14:45 INFO  c.e.trainerintake.security.JwtFilter - ? Token validation result for test@gmail.com: true
+2026-01-07 11:14:45 INFO  c.e.trainerintake.security.JwtFilter - ? Authentication set in SecurityContext for user: test@gmail.com
+2026-01-07 11:14:45 INFO  c.e.trainerintake.security.JwtFilter - ?? Incoming request path: /survey/questions
+2026-01-07 11:14:45 DEBUG c.e.trainerintake.security.JwtFilter - ? Found Authorization header, token extracted
+2026-01-07 11:14:45 INFO  c.e.trainerintake.security.JwtFilter - ? Username extracted from JWT: test@gmail.com
+2026-01-07 11:14:45 DEBUG c.e.trainerintake.security.JwtFilter - ? Loading UserDetails for: test@gmail.com
+2026-01-07 11:14:45 INFO  c.e.trainerintake.security.JwtFilter - ? Loaded UserDetails: test@gmail.com | Authorities: [ROLE_USER]
+2026-01-07 11:14:45 INFO  c.e.trainerintake.security.JwtFilter - ? Token validation result for test@gmail.com: true
+2026-01-07 11:14:45 INFO  c.e.trainerintake.security.JwtFilter - ? Authentication set in SecurityContext for user: test@gmail.com
