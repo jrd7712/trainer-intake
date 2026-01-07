@@ -7,6 +7,42 @@ Clients fill out a dynamic, multi‑step survey, and the system generates a pers
 The backend manages surveys, answers, and plan generation.
 The frontend provides a polished, modern UI with a sport‑red design system and smooth page transitions.
 
+flowchart TD
+
+    %% ===== FRONTEND =====
+    subgraph UI[React Frontend]
+        A[Create Workout Page]
+        B[Dynamic Survey Renderer]
+        C[Multiselect + Dropdown Inputs]
+        D[Progress Bar]
+        E[Workout Plan Viewer]
+    end
+
+    %% ===== BACKEND =====
+    UI -->|REST API| BE[Spring Boot Backend]
+
+    subgraph Backend[Spring Boot Backend]
+        SC[SurveyController<br/>/survey/questions<br/>/survey/submit]
+        WC[WorkoutPlanController<br/>/plans/{surveyId}]
+        SS[SurveyService<br/>Load Questions<br/>Save Answers<br/>Create Survey]
+        WS[WorkoutPlanService<br/>Build Prompt<br/>Call OpenAI<br/>Save Plan]
+        REPO[Repositories<br/>SurveyRepo<br/>QuestionRepo<br/>AnswerRepo<br/>WorkoutPlanRepo]
+        OA[OpenAI Client<br/>GPT‑4.1‑mini]
+    end
+
+    BE --> SC
+    BE --> WC
+
+    SC --> SS
+    WC --> WS
+
+    SS --> REPO
+    WS --> REPO
+    WS --> OA
+
+    %% ===== DATABASE =====
+    REPO --> DB[(SQL Server<br/>Surveys<br/>Questions<br/>Answers<br/>WorkoutPlans)]
+
 ## 🛠️ Tech Stack
 - **Backend**: Spring Boot, JPA, SQL Server
 - **Frontend**: React (Create React App)
