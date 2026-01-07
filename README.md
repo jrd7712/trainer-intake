@@ -102,16 +102,16 @@ openai.api.url=https://api.openai.com/v1/chat/completions
    http://localhost:3000
 
 🧪 How the Workflow Operates
-1. 	React loads survey questions from 
+1. 	React loads survey questions from /survey/questions
 2. 	User completes the multi‑step survey
-3. 	React submits answers to 
+3. 	React submits answers to /survey/submit
 4. 	Backend:
 • 	Creates a new survey
 • 	Saves answers
 • 	Generates AI workout plan
 • 	Stores the plan
-• 	Returns  + 
-5. 	React displays the generated plan beautifully
+• 	Returns surveyId + WorkoutPLan
+5. 	React displays the generated plan
 
 🧱 Development Notes
 During development we resolved:
