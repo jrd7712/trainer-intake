@@ -53,3 +53,12 @@
 .register-form button:hover {
   background: var(--color-primary-hover);
 }
+
+.password-note {
+  font-size: 0.85rem;
+  color: var(--color-text);
+  opacity: 0.8;
+  margin-top: -10px;
+  margin-bottom: 15px;
+  text-align: left;
+}

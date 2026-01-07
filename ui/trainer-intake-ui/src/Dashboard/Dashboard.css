@@ -1,41 +1,35 @@
-.dashboard-container {
-  max-width: 700px;
-  margin: 40px auto;
-  padding: var(--spacing-xl);
-  background: var(--color-surface);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
-  text-align: center;
-  animation: fadeIn 0.5s ease;
-}
-
 .dashboard-title {
-  font-size: 2rem;
-  font-weight: 700;
   color: var(--color-primary);
-  margin-bottom: var(--spacing-lg);
 }
 
-.dashboard-token-box {
-  background: var(--color-bg);
-  padding: var(--spacing-md);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--color-border);
-  margin-bottom: var(--spacing-lg);
-  font-size: 0.95rem;
-  word-break: break-all;
+.dashboard-subtitle {
+  color: var(--color-text);
+}
+
+.dashboard-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center; /* keeps title, subtitle, and button centered */
+}
+
+.dashboard-card {
+  background: var(--color-surface);
+  box-shadow: var(--shadow-md);
+  padding: 20px;
+  border-radius: var(--radius-lg);
+  margin-bottom: 30px;
+  text-align: left; /* only the card content is left-aligned */
+  display: inline-block; /* prevents it from stretching full width */
+}
+
+.dashboard-card h3 {
+  color: var(--color-primary);
 }
 
 .logout-btn {
-  padding: var(--spacing-md) var(--spacing-lg);
   background: var(--color-primary);
   color: var(--color-text-light);
-  border: none;
-  border-radius: var(--radius-md);
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: var(--transition-fast);
 }
 
 .logout-btn:hover {

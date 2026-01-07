@@ -17,8 +17,7 @@ public class WorkoutPlan {
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 
-    // ✅ Proper one-to-one relationship back to Survey
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "survey_id", nullable = false, unique = true)
     private Survey survey;
 

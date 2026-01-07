@@ -38,6 +38,7 @@ function RegisterForm() {
   return (
     <form className="register-form" onSubmit={handleRegister}>
       <h2>Register</h2>
+
       <input
         type="text"
         placeholder="Username"
@@ -45,6 +46,7 @@ function RegisterForm() {
         onChange={(e) => setUsername(e.target.value)}
         required
       />
+
       <input
         type="text"
         placeholder="First Name"
@@ -52,6 +54,7 @@ function RegisterForm() {
         onChange={(e) => setFirstName(e.target.value)}
         required
       />
+
       <input
         type="text"
         placeholder="Last Name"
@@ -59,6 +62,7 @@ function RegisterForm() {
         onChange={(e) => setLastName(e.target.value)}
         required
       />
+
       <input
         type="email"
         placeholder="Email"
@@ -66,6 +70,7 @@ function RegisterForm() {
         onChange={(e) => setEmail(e.target.value)}
         required
       />
+
       <input
         type="password"
         placeholder="Password"
@@ -73,6 +78,12 @@ function RegisterForm() {
         onChange={(e) => setPassword(e.target.value)}
         required
       />
+
+      {/* 🔒 Password safety note */}
+      <p className="password-note">
+        For your safety, please use a unique password that you don’t use for important accounts.
+      </p>
+
       <button type="submit">Register</button>
     </form>
   );
