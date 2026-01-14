@@ -1,14 +1,25 @@
-# Use a lightweight JDK image
-FROM eclipse-temurin:17-jdk-alpine
-
-# Set a working directory
+# ---- Build Stage ----
+FROM maven:3.9.6-eclipse-temurin-17 AS build
 WORKDIR /app
 
-# Copy the JAR into the container
-COPY target/*.jar app.jar
+# Copy pom.xml and download dependencies first (better caching)
+COPY pom.xml .
+RUN mvn -q dependency:go-offline
 
-# Expose the port your Spring Boot app runs on
+# Copy the rest of the source code
+COPY src ./src
+
+# Build the JAR
+RUN mvn -q -DskipTests package
+
+
+# ---- Run Stage ----
+FROM eclipse-temurin:17-jdk-alpine
+WORKDIR /app
+
+# Copy the built JAR from the build stage
+COPY --from=build /app/target/*.jar app.jar
+
 EXPOSE 8080
 
-# Run the application
 ENTRYPOINT ["java", "-jar", "app.jar"]
