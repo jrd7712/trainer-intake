@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { apiFetch } from "../api";
 import "./MyPrograms.css";
+import { exportToPDF } from "../utils/exportToPDF";
+import { exportToWord } from "../utils/exportToWord";
 
 function MyPrograms() {
   const [programs, setPrograms] = useState([]);
@@ -95,6 +97,23 @@ function MyPrograms() {
               </div>
 
               <pre className="program-plan">{p.planText}</pre>
+
+              {/* Download buttons */}
+              <div className="download-buttons">
+                <button
+                  className="download-btn"
+                  onClick={() => exportToPDF(p)}
+                >
+                  Download PDF
+                </button>
+
+                <button
+                  className="download-btn"
+                  onClick={() => exportToWord(p)}
+                >
+                  Download Word
+                </button>
+              </div>
             </li>
           ))}
         </ul>

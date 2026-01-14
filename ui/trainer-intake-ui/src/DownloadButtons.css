@@ -1,0 +1,20 @@
+.download-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.download-btn {
+  background-color: var(--sport-red);
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.download-btn:hover {
+  background-color: var(--sport-red-dark);
+}
