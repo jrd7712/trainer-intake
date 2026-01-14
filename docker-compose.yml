@@ -1,15 +1,30 @@
+version: "3.9"
+
 services:
+  db:
+    image: postgres:15
+    container_name: trainer-intake-db
+    environment:
+      POSTGRES_DB: trainer_intake_db
+      POSTGRES_USER: trainer_intake_db_user
+      POSTGRES_PASSWORD: HCVSRru6YUBMcJGSfs2osChPfRRS1uxE
+    ports:
+      - "5432:5432"
+    restart: always
+
   app:
     build: .
     image: trainer-intake
     container_name: trainer-intake-app
-    ports:
-      - "8080:8080"
+    depends_on:
+      - db
     environment:
-      DB_URL: ${DB_URL}
-      DB_USERNAME: ${DB_USERNAME}
-      DB_PASSWORD: ${DB_PASSWORD}
+      DB_URL: jdbc:postgresql://db:5432/trainer_intake_db
+      DB_USERNAME: trainer_intake_db_user
+      DB_PASSWORD: HCVSRru6YUBMcJGSfs2osChPfRRS1uxE
       OPENAI_API_KEY: ${OPENAI_API_KEY}
       JWT_SECRET: ${JWT_SECRET}
       PORT: "8080"
+    ports:
+      - "8080:8080"
     restart: always
